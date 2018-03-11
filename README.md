@@ -1,20 +1,20 @@
-# nginx
-#user  nobody;
-worker_processes  1;
+    # nginx
+    #user  nobody;
+    worker_processes  1;
 
-#error_log  logs/error.log;
-#error_log  logs/error.log  notice;
-#error_log  logs/error.log  info;
+    #error_log  logs/error.log;
+    #error_log  logs/error.log  notice;
+    #error_log  logs/error.log  info;
 
-#pid        logs/nginx.pid;
-
-
-events {
-    worker_connections  1024;
-}
+    #pid        logs/nginx.pid;
 
 
-http {
+    events {
+     worker_connections  1024;
+    }
+
+
+    http {
     include       mime.types;
     default_type  application/octet-stream;
 
