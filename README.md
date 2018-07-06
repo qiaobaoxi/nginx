@@ -120,3 +120,19 @@
     #}
 
 }
+proxy_cache_path cache levels=1:2 //目录 keys_zone=my_cache //名字 :10m 声明内存大小
+
+//简洁
+ server {
+        listen       80; 端口
+        server_name  localhost; 域名
+
+        location / {
+            proxy_cache my_cache;
+            proxy_pass   http://127.0.0.1:8888;代理到
+			proxy_set_header  Host $host;因为代理会更改域名所以要便会原来的域名
+        }
+
+    }
+
+
